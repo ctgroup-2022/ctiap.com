@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=${DEPLOYPATH:-public_html}
+    - /bin/cp -r index.html $DEPLOYPATH/
