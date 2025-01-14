@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
+
 <body class="font-sans">
 
     <!-- Navbar -->
     <nav class="w-full bg-blue-600 text-white py-4 px-6">
         <div class="flex justify-between items-center max-w-screen-xl mx-auto">
-            <a href="#" class="text-2xl font-bold">EduCollege</a>
+            <a href="#" class="text-2xl font-bold">CTIAP</a>
             <ul class="flex space-x-6">
                 <li><a href="#achievements" class="hover:underline">Achievements</a></li>
                 <li><a href="#testimonials" class="hover:underline">Testimonials</a></li>
@@ -22,12 +24,15 @@
         </div>
     </nav>
 
+
     <!-- Hero Section -->
-    <header class="w-full h-screen bg-cover bg-center text-white" style="background-image: url('https://source.unsplash.com/1600x900/?education');">
+    <header class="w-full h-screen bg-cover bg-center text-white bg-slate-500 "
+        style="background-image: url('https://images.shiksha.com/mediadata/images/1649747184php0uoENf.jpeg');">
         <div class="flex flex-col items-center justify-center h-full bg-black bg-opacity-50">
-            <h1 class="text-5xl font-bold mb-4">Welcome to EduCollege</h1>
+            <h1 class="text-5xl font-bold mb-4">Welcome to CTIAP</h1>
             <p class="text-xl mb-6">Empowering the Future of Education</p>
-            <a href="#courses" class="bg-blue-600 px-6 py-3 rounded-full text-white hover:bg-blue-500">Explore Courses</a>
+            <a href="#courses" class="bg-blue-600 px-6 py-3 rounded-full text-white hover:bg-blue-500">Explore
+                Courses</a>
         </div>
     </header>
 
@@ -53,37 +58,25 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="w-11/12 mx-auto py-12 bg-gray-100">
-        <h2 class="text-3xl font-bold text-center mb-8">What Our Students Say</h2>
-        <div class="space-y-8">
-            <div class="p-6 shadow-md rounded-md bg-white">
-                <p>"EduCollege transformed my career prospects! The faculty and resources are top-notch."</p>
-                <p class="text-right font-bold">- Jane Doe</p>
-            </div>
-            <div class="p-6 shadow-md rounded-md bg-white">
-                <p>"I loved the campus and the atmosphere. It's the perfect place to learn and grow."</p>
-                <p class="text-right font-bold">- John Smith</p>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Infrastructure Section -->
     <section id="infra" class="w-11/12 mx-auto py-12">
         <h2 class="text-3xl font-bold text-center mb-8">State-of-the-Art Infrastructure</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="rounded-md overflow-hidden">
-                <img src="https://source.unsplash.com/600x400/?library" alt="Library">
+                <img src="" alt="Library">
             </div>
             <div>
                 <h3 class="text-xl font-bold mb-4">Modern Campus</h3>
-                <p>Our campus is equipped with cutting-edge facilities to support all academic and extracurricular needs.</p>
+                <p>Our campus is equipped with cutting-edge facilities to support all academic and extracurricular
+                    needs.</p>
             </div>
         </div>
     </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="w-11/12 mx-auto py-12 bg-gray-100">
+    <section id="courses" class="w-11/12 mx-auto py-12 bg-gray-100 relative overflow-hidden">
         <h2 class="text-3xl font-bold text-center mb-8">Explore Our Courses</h2>
         <div class="overflow-x-auto">
             <table class="min-w-full bg-white shadow-md rounded-md">
@@ -108,8 +101,29 @@
                         <td class="py-3 px-6">$8,000</td>
                         <td class="py-3 px-6"><a href="#" class="text-blue-600 underline">View</a></td>
                     </tr>
+                    <tr>
+                        <td class="py-3 px-6">Mechanical Engineering</td>
+                        <td class="py-3 px-6">4 Years</td>
+                        <td class="py-3 px-6">$9,000</td>
+                        <td class="py-3 px-6"><a href="#" class="text-blue-600 underline">View</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 px-6">Electrical Engineering</td>
+                        <td class="py-3 px-6">4 Years</td>
+                        <td class="py-3 px-6">$9,500</td>
+                        <td class="py-3 px-6"><a href="#" class="text-blue-600 underline">View</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 px-6">Civil Engineering</td>
+                        <td class="py-3 px-6">4 Years</td>
+                        <td class="py-3 px-6">$9,000</td>
+                        <td class="py-3 px-6"><a href="#" class="text-blue-600 underline">View</a></td>
+                    </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="text-center mt-6">
+            <a href="courses.html" class="bg-blue-600 px-6 py-3 rounded-full text-white hover:bg-blue-500">Show More</a>
         </div>
     </section>
 
@@ -139,6 +153,23 @@
         </div>
     </section>
 
+
+ <!-- Testimonials Section -->
+ <section id="testimonials" class="w-11/12 mx-auto py-12 bg-gray-100">
+    <h2 class="text-3xl font-bold text-center mb-8">What Our Students Say</h2>
+    <div class="space-y-8">
+        <div class="p-6 shadow-md rounded-md bg-white">
+            <p>"EduCollege transformed my career prospects! The faculty and resources are top-notch."</p>
+            <p class="text-right font-bold">- Jane Doe</p>
+        </div>
+        <div class="p-6 shadow-md rounded-md bg-white">
+            <p>"I loved the campus and the atmosphere. It's the perfect place to learn and grow."</p>
+            <p class="text-right font-bold">- John Smith</p>
+        </div>
+    </div>
+</section>
+
+
     <!-- Footer -->
     <footer class="w-full bg-blue-600 text-white py-6">
         <div class="max-w-screen-xl mx-auto text-center">
@@ -147,10 +178,13 @@
     </footer>
 
     <script>
+        gsap.from("nav a", { duration: 1, opacity: 0, y: -50, stagger: 0.2 });
+        gsap.from("nav ul li", { duration: 1, opacity: 0, y: -50, stagger: 0.2 });
         gsap.from("header h1", { duration: 1, opacity: 0, y: -50 });
         gsap.from("header p", { duration: 1, opacity: 0, y: 50, delay: 0.5 });
         gsap.from("header a", { duration: 1, opacity: 0, scale: 0.8, delay: 1 });
     </script>
 
 </body>
+
 </html>
