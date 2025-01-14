@@ -4,37 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educational College</title>
+    <title>CTIAP | CT Institue of Archite</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
 
-<body class="font-sans">
+<body class="font-sans ">
 
     <!-- Navbar -->
-    <nav class="w-full bg-blue-600 text-white py-4 px-6">
+    <nav class="w-full bg-gradient-to-r from-blue-800 to-indigo-600 text-white py-4 px-6 shadow-lg">
         <div class="flex justify-between items-center max-w-screen-xl mx-auto">
-            <a href="#" class="text-2xl font-bold">CTIAP</a>
-            <ul class="flex space-x-6">
-                <li><a href="#achievements" class="hover:underline">Achievements</a></li>
-                <li><a href="#testimonials" class="hover:underline">Testimonials</a></li>
-                <li><a href="#courses" class="hover:underline">Courses</a></li>
-                <li><a href="#placement" class="hover:underline">Placement</a></li>
+            <a href="#" class="flex items-center text-2xl font-bold">
+                <img src="Logo/logo.png" width="80px" alt="CT GROUP LOGO" class="mr-2">
+            </a>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <svg width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+         
+            </div>
+            <ul id="menu" class="hidden md:flex space-x-6">
+                <li><a href="#achievements" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-trophy mr-2"></i>Achievements</a></li>
+                <li><a href="#testimonials" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-comment-alt mr-2"></i>Testimonials</a></li>
+                <li><a href="#courses" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-book mr-2"></i>Courses</a></li>
+                <li><a href="#placement" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Placement</a></li>
+            </ul>
+        </div>
+
+        <!-- Dropdown menu for mobile -->
+        <div id="dropdown-menu" class="hidden absolute bg-white text-black w-3/4 mt-4 rounded-lg shadow-lg right-6">
+            <ul class="flex flex-col space-y-4 p-6">
+                <li><a href="#achievements" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-trophy mr-2"></i>Achievements</a></li>
+                <li><a href="#testimonials" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-comment-alt mr-2"></i>Testimonials</a></li>
+                <li><a href="#courses" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-book mr-2"></i>Courses</a></li>
+                <li><a href="#placement" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Placement</a></li>
             </ul>
         </div>
     </nav>
 
 
+
+
     <!-- Hero Section -->
-    <header class="w-full h-screen bg-cover bg-center text-white bg-slate-500 "
+    <!-- Hero Section -->
+    <header
+        class="w-full h-screen bg-cover bg-center text-white bg-slate-500 flex items-center justify-center text-center"
         style="background-image: url('https://images.shiksha.com/mediadata/images/1649747184php0uoENf.jpeg');">
-        <div class="flex flex-col items-center justify-center h-full bg-black bg-opacity-50">
-            <h1 class="text-5xl font-bold mb-4">Welcome to CTIAP</h1>
-            <p class="text-xl mb-6">Empowering the Future of Education</p>
-            <a href="#courses" class="bg-blue-600 px-6 py-3 rounded-full text-white hover:bg-blue-500">Explore
+        <div class="bg-black bg-opacity-50 p-4 rounded">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to CTIAP</h1>
+            <p class="text-lg md:text-xl mb-6">Empowering the Future of Education</p>
+            <a href="#courses"
+                class="bg-blue-600 px-4 py-2 md:px-6 md:py-3 rounded-full text-white hover:bg-blue-500">Explore
                 Courses</a>
         </div>
     </header>
+
 
     <!-- Achievements Section -->
     <section id="achievements" class="w-11/12 mx-auto py-12">
@@ -58,7 +96,7 @@
         </div>
     </section>
 
-   
+
 
     <!-- Infrastructure Section -->
     <section id="infra" class="w-11/12 mx-auto py-12">
@@ -154,20 +192,20 @@
     </section>
 
 
- <!-- Testimonials Section -->
- <section id="testimonials" class="w-11/12 mx-auto py-12 bg-gray-100">
-    <h2 class="text-3xl font-bold text-center mb-8">What Our Students Say</h2>
-    <div class="space-y-8">
-        <div class="p-6 shadow-md rounded-md bg-white">
-            <p>"EduCollege transformed my career prospects! The faculty and resources are top-notch."</p>
-            <p class="text-right font-bold">- Jane Doe</p>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="w-11/12 mx-auto py-12 bg-gray-100">
+        <h2 class="text-3xl font-bold text-center mb-8">What Our Students Say</h2>
+        <div class="space-y-8">
+            <div class="p-6 shadow-md rounded-md bg-white">
+                <p>"EduCollege transformed my career prospects! The faculty and resources are top-notch."</p>
+                <p class="text-right font-bold">- Jane Doe</p>
+            </div>
+            <div class="p-6 shadow-md rounded-md bg-white">
+                <p>"I loved the campus and the atmosphere. It's the perfect place to learn and grow."</p>
+                <p class="text-right font-bold">- John Smith</p>
+            </div>
         </div>
-        <div class="p-6 shadow-md rounded-md bg-white">
-            <p>"I loved the campus and the atmosphere. It's the perfect place to learn and grow."</p>
-            <p class="text-right font-bold">- John Smith</p>
-        </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- Footer -->
@@ -183,7 +221,30 @@
         gsap.from("header h1", { duration: 1, opacity: 0, y: -50 });
         gsap.from("header p", { duration: 1, opacity: 0, y: 50, delay: 0.5 });
         gsap.from("header a", { duration: 1, opacity: 0, scale: 0.8, delay: 1 });
+
+
+        const menuBtn = document.getElementById('menu-btn');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+
+        menuBtn.addEventListener('click', () => {
+            const isHidden = dropdownMenu.classList.contains('hidden');
+            dropdownMenu.classList.toggle('hidden');
+
+            if (!isHidden) {
+                gsap.to(dropdownMenu, {
+                    opacity: 0,
+                    y: -10,
+                    duration: 0.3,
+                    onComplete: () => dropdownMenu.classList.add('hidden')
+                });
+            } else {
+                dropdownMenu.classList.remove('hidden');
+                gsap.fromTo(dropdownMenu, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.3 });
+            }
+        });
     </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 
 </body>
 
