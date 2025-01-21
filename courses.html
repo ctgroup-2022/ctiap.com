@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animated-gradient {
+            background: linear-gradient(270deg, #1E40AF, #000000a1, #4F46E5);
+            background-size: 600% 600%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="w-full     text-white py-4 px-6 shadow-lg shadow-black gradientAnimation animated-gradient">
+        <div class="flex justify-between items-center max-w-screen-xl mx-auto">
+            <a href="index.html" class="flex items-center text-2xl font-bold">
+                <img src="Logo/logo.png" width="80px" alt="CT GROUP LOGO" class="mr-2">
+            </a>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <svg width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+            </div>
+            <ul id="menu" class="hidden md:flex space-x-6">
+                <li><a href="#achievements" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-trophy mr-2"></i>Achievements</a></li>
+                <li><a href="#testimonials" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-comment-alt mr-2"></i>Testimonials</a></li>
+                <li><a href="courses.html" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-book mr-2"></i>Courses</a></li>
+                <li><a href="#placement" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Placement</a></li>
+                <li><a href="gallery.html" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Gallery</a></li>
+            </ul>
+        </div>
+
+        <!-- Dropdown menu for mobile -->
+        <div id="dropdown-menu" class="hidden   text-white w-3/4 mt-4 rounded-lg shadow-lg right-6">
+            <ul class="flex flex-col space-y-4 p-6   to-slate-300  ">
+                <li><a href="#achievements" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-trophy mr-2"></i>Achievements</a></li>
+                <li><a href="#testimonials" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-comment-alt mr-2"></i>Testimonials</a></li>
+                <li><a href="courses.html" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-book mr-2"></i>Courses</a></li>
+                <li><a href="#placement" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Placement</a></li>
+                <li><a href="gallery.html" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Gallery</a></li>
+
+
+            </ul>
+        </div>
+    </nav>
+  
+
+        <!-- Courses Section -->
+        <section id="courses" class="w-11/12 mx-auto py-12 bg-gray-100 relative overflow-hidden  mt-12">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-700">Explore Our Courses</h2>
+            <div class="mb-4 text-center">
+                <input type="text" id="search"
+                    class="border rounded-md px-4 py-2 w-3/4 sm:w-1/2 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                    placeholder="Search for a course...">
+            </div>
+            <div class="overflow-x-auto">
+                <table id="course-table" class="min-w-full bg-white shadow-lg rounded-md">
+                    <thead class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white">
+                        <tr>
+                            <th class="py-3 px-6 text-left font-medium text-yellow-400">Course Name</th>
+                            <th class="py-3 px-6 text-left font-medium text-yellow-400">Duration</th>
+                            <th class="py-3 px-6 text-left font-medium text-yellow-400">Fee</th>
+                            <th class="py-3 px-6 text-left font-medium text-yellow-400">Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="course-table-body" class="transition-all duration-300">
+                        <!-- Table rows will be dynamically generated here -->
+                    </tbody>
+                </table>
+            </div>
+            
+        </section>
+
+        <script>
+            // Sample JSON data
+            const courseData = [
+                { "name": "Computer Science", "duration": "4 Years", "fee": "$10,000", "details": "#" },
+                { "name": "Business Management", "duration": "3 Years", "fee": "$8,000", "details": "#" },
+                { "name": "Mechanical Engineering", "duration": "4 Years", "fee": "$9,000", "details": "#" },
+                { "name": "Electrical Engineering", "duration": "4 Years", "fee": "$9,500", "details": "#" },
+                { "name": "Civil Engineering", "duration": "4 Years", "fee": "$9,000", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+                { "name": "Null", "duration": "Null", "fee": "Null", "details": "#" },
+            ];
+
+            const tableBody = document.getElementById('course-table-body');
+            const searchInput = document.getElementById('search');
+
+            // Function to render table rows
+            function renderTable(data) {
+                tableBody.innerHTML = '';
+                data.forEach(course => {
+                    const row = document.createElement('tr');
+                    row.className = "hover:bg-yellow-100 transition-colors duration-300";
+                    row.innerHTML = `
+                <td class="py-3 px-6 text-black font-semibold">${course.name}</td>
+                <td class="py-3 px-6 text-blue-700">${course.duration}</td>
+                <td class="py-3 px-6 text-blue-700">${course.fee}</td>
+                <td class="py-3 px-6"><a href="${course.details}" class="text-yellow-400 underline hover:text-yellow-300">View</a></td>
+                `;
+                    tableBody.appendChild(row);
+                });
+            }
+
+            // Search functionality
+            searchInput.addEventListener('input', (e) => {
+                const searchText = e.target.value.toLowerCase();
+                const filteredData = courseData.filter(course =>
+                    course.name.toLowerCase().includes(searchText)
+                );
+                renderTable(filteredData);
+            });
+
+            // Initial render
+            renderTable(courseData);
+        </script>
+
+</body>
+
+</html>

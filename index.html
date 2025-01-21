@@ -12,9 +12,11 @@
             0% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
+
             100% {
                 background-position: 0% 50%;
             }
@@ -25,41 +27,40 @@
             background-size: 600% 600%;
             animation: gradientAnimation 10s ease infinite;
         }
-
-
-        
     </style>
 </head>
 
 <body class="font-sans ">
 
     <!-- Navbar -->
-    
+
     <nav class="w-full     text-white py-4 px-6 shadow-lg shadow-black gradientAnimation animated-gradient">
         <div class="flex justify-between items-center max-w-screen-xl mx-auto">
-            <a href="#" class="flex items-center text-2xl font-bold">
+            <a href="index.html" class="flex items-center text-2xl font-bold">
                 <img src="Logo/logo.png" width="80px" alt="CT GROUP LOGO" class="mr-2">
             </a>
             <div class="md:hidden">
                 <button id="menu-btn" class="text-white focus:outline-none">
                     <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                     <svg width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
                     </svg>
                 </button>
-         
+
             </div>
             <ul id="menu" class="hidden md:flex space-x-6">
                 <li><a href="#achievements" class="hover:text-yellow-300 flex items-center"><i
                             class="fas fa-trophy mr-2"></i>Achievements</a></li>
                 <li><a href="#testimonials" class="hover:text-yellow-300 flex items-center"><i
                             class="fas fa-comment-alt mr-2"></i>Testimonials</a></li>
-                <li><a href="#courses" class="hover:text-yellow-300 flex items-center"><i
+                <li><a href="courses.html" class="hover:text-yellow-300 flex items-center"><i
                             class="fas fa-book mr-2"></i>Courses</a></li>
                 <li><a href="#placement" class="hover:text-yellow-300 flex items-center"><i
                             class="fas fa-briefcase mr-2"></i>Placement</a></li>
+                <li><a href="gallery.html" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Gallery</a></li>
             </ul>
         </div>
 
@@ -70,10 +71,14 @@
                             class="fas fa-trophy mr-2"></i>Achievements</a></li>
                 <li><a href="#testimonials" class="hover:text-blue-500 flex items-center"><i
                             class="fas fa-comment-alt mr-2"></i>Testimonials</a></li>
-                <li><a href="#courses" class="hover:text-blue-500 flex items-center"><i
+                <li><a href="courses.html" class="hover:text-blue-500 flex items-center"><i
                             class="fas fa-book mr-2"></i>Courses</a></li>
                 <li><a href="#placement" class="hover:text-blue-500 flex items-center"><i
                             class="fas fa-briefcase mr-2"></i>Placement</a></li>
+                <li><a href="gallery.html" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Gallery</a></li>
+
+
             </ul>
         </div>
     </nav>
@@ -83,12 +88,12 @@
 
     <!-- Hero Section -->
     <!-- Hero Section -->
-    <header
-        class="w-full h-screen bg-cover bg-center text-white flex items-center justify-center text-center relative"
+    <header class="w-full h-screen bg-cover bg-center text-white flex items-center justify-center text-center relative"
         style="background-image: url('/Images/Banner1.jpg');">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="relative z-10 p-4 rounded">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to <strong class="text-yellow-400">CTIAP</strong></h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to <strong class="text-yellow-400">CTIAP</strong>
+            </h1>
             <p class="text-lg md:text-xl mb-6">Architecture Marvels Start from Here</p>
             <a href="#courses"
                 class="bg-blue-600 px-4 py-2 md:px-6 md:py-3 rounded-full text-white hover:bg-blue-500">Explore
@@ -99,94 +104,152 @@
 
     <!-- Achievements Section -->
     <section id="achievements" class="w-11/12 mx-auto py-12">
-        <h2 class="text-3xl font-bold text-center mb-8 text-yellow-400">Our Achievements</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center">
-                <div class="text-blue-600 text-5xl mb-4">📚</div>
-                <h3 class="text-xl font-bold">50+ Courses</h3>
-                <p>Wide range of quality courses available.</p>
-            </div>
-            <div class="text-center">
-                <div class="text-blue-600 text-5xl mb-4">🏆</div>
-                <h3 class="text-xl font-bold">10K+ Alumni</h3>
-                <p>Successful students worldwide.</p>
-            </div>
-            <div class="text-center">
-                <div class="text-blue-600 text-5xl mb-4">🌟</div>
-                <h3 class="text-xl font-bold">5 Awards</h3>
-                <p>Recognized excellence in education.</p>
-            </div>
+        <div class="max-w-4xl mx-auto px-4 py-10">
+            <h2 class="text-3xl font-bold text-center mb-6 text-yellow-400">Achievements</h2>
+            <div id="achievement-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </div>
+
+        <script>
+            // JSON data for achievements
+            const achievements = [
+                { icon: "🏆", title: "Top Performer", description: "Awarded for outstanding performance in Q1." },
+                { icon: "📚", title: "Learning Champ", description: "Completed 10+ advanced training courses." },
+                { icon: "🌟", title: "Star Innovator", description: "Recognized for proposing 3 innovative projects." },
+                { icon: "🚀", title: "Growth Leader", description: "Exceeded growth targets for the year." },
+                { icon: "💡", title: "Idea Machine", description: "Submitted 20+ impactful ideas in the suggestion box." },
+                { icon: "🤝", title: "Team Builder", description: "Organized team-building activities boosting morale." },
+                { icon: "📈", title: "Sales Achiever", description: "Achieved record-breaking sales in Q3." },
+                { icon: "🏅", title: "Customer Hero", description: "Received highest customer satisfaction ratings." },
+                { icon: "💻", title: "Tech Guru", description: "Led successful deployment of new technology." }
+            ];
+
+            const container = document.getElementById('achievement-container');
+            let currentIndex = 0;
+
+            // Function to render cards
+            function renderAchievements(startIndex) {
+                container.innerHTML = ''; // Clear current cards
+                for (let i = startIndex; i < startIndex + 3; i++) {
+                    const { icon, title, description } = achievements[i % achievements.length];
+                    const card = document.createElement('div');
+                    card.className = "bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center transform scale-0";
+                    card.innerHTML = `
+              <div class="text-4xl mb-4">${icon}</div>
+              <h3 class="text-xl font-semibold mb-2">${title}</h3>
+              <p class="text-gray-600">${description}</p>
+            `;
+                    container.appendChild(card);
+                    gsap.to(card, { scale: 1, duration: 0.5, delay: (i - startIndex) * 0.2 });
+                }
+            }
+
+            // Initial render
+            renderAchievements(currentIndex);
+
+            // Auto-rotate achievements every 5 seconds
+            setInterval(() => {
+                currentIndex = (currentIndex + 3) % achievements.length;
+                renderAchievements(currentIndex);
+            }, 5000);
+        </script>
     </section>
 
 
 
     <!-- Infrastructure Section -->
     <section id="infra" class="w-11/12 mx-auto py-12">
-        <h2 class="text-3xl font-bold text-center mb-8">State-of-the-Art Infrastructure</h2>
+        <h2 class="text-3xl font-bold text-center mb-8 text-yellow-400">State-of-the-Art Infrastructure</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="rounded-md overflow-hidden">
-                <img src="" alt="Library">
+                <img src="/Images/Infrastructure/Infra1.jpg" alt="Class">
             </div>
             <div>
                 <h3 class="text-xl font-bold mb-4">Modern Campus</h3>
-                <p>Our campus is equipped with cutting-edge facilities to support all academic and extracurricular
-                    needs.</p>
+                <p></p>
+                Our classrooms are equipped with the latest technology to enhance the learning experience. Each
+                classroom is designed to be spacious and comfortable, providing an ideal environment for students to
+                focus and engage in their studies. The infrastructure includes high-speed internet, smart boards, and
+                ergonomic furniture to ensure that students have everything they need to succeed. Additionally, we have
+                state-of-the-art laboratories, a well-stocked library, and collaborative spaces that foster innovation
+                and creativity. Our campus is designed to support both academic and extracurricular activities, ensuring
+                a well-rounded education for all students.
             </div>
         </div>
     </section>
 
     <!-- Courses Section -->
     <section id="courses" class="w-11/12 mx-auto py-12 bg-gray-100 relative overflow-hidden">
-        <h2 class="text-3xl font-bold text-center mb-8">Explore Our Courses</h2>
+        <h2 class="text-3xl font-bold text-center mb-8 text-blue-700">Explore Our Courses</h2>
+        <div class="mb-4 text-center">
+            <input type="text" id="search"
+                class="border rounded-md px-4 py-2 w-3/4 sm:w-1/2 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                placeholder="Search for a course...">
+        </div>
         <div class="overflow-x-auto">
-            <table class="min-w-full bg-white shadow-md rounded-md">
-                <thead class="bg-blue-600 text-white">
+            <table id="course-table" class="min-w-full bg-white shadow-lg rounded-md">
+                <thead class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white">
                     <tr>
-                        <th class="py-3 px-6 text-left">Course Name</th>
-                        <th class="py-3 px-6 text-left">Duration</th>
-                        <th class="py-3 px-6 text-left">Fee</th>
-                        <th class="py-3 px-6 text-left">Details</th>
+                        <th class="py-3 px-6 text-left font-medium text-yellow-400">Course Name</th>
+                        <th class="py-3 px-6 text-left font-medium text-yellow-400">Duration</th>
+                        <th class="py-3 px-6 text-left font-medium text-yellow-400">Fee</th>
+                        <th class="py-3 px-6 text-left font-medium text-yellow-400">Details</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td class="py-3 px-6">Computer Science</td>
-                        <td class="py-3 px-6">4 Years</td>
-                        <td class="py-3 px-6">$10,000</td>
-                        <td class="py-3 px-6"><a href="#" class="text-blue-600 underline">View</a></td>
-                    </tr>
-                    <tr>
-                        <td class="py-3 px-6">Business Management</td>
-                        <td class="py-3 px-6">3 Years</td>
-                        <td class="py-3 px-6">$8,000</td>
-                        <td class="py-3 px-6"><a href="#" class="text-blue-600 underline">View</a></td>
-                    </tr>
-                    <tr>
-                        <td class="py-3 px-6">Mechanical Engineering</td>
-                        <td class="py-3 px-6">4 Years</td>
-                        <td class="py-3 px-6">$9,000</td>
-                        <td class="py-3 px-6"><a href="#" class="text-blue-600 underline">View</a></td>
-                    </tr>
-                    <tr>
-                        <td class="py-3 px-6">Electrical Engineering</td>
-                        <td class="py-3 px-6">4 Years</td>
-                        <td class="py-3 px-6">$9,500</td>
-                        <td class="py-3 px-6"><a href="#" class="text-blue-600 underline">View</a></td>
-                    </tr>
-                    <tr>
-                        <td class="py-3 px-6">Civil Engineering</td>
-                        <td class="py-3 px-6">4 Years</td>
-                        <td class="py-3 px-6">$9,000</td>
-                        <td class="py-3 px-6"><a href="#" class="text-blue-600 underline">View</a></td>
-                    </tr>
+                <tbody id="course-table-body" class="transition-all duration-300">
+                    <!-- Table rows will be dynamically generated here -->
                 </tbody>
             </table>
         </div>
         <div class="text-center mt-6">
-            <a href="courses.html" class="bg-blue-600 px-6 py-3 rounded-full text-white hover:bg-blue-500">Show More</a>
+            <a href="courses.html"
+                class="bg-yellow-400 px-6 py-3 rounded-full text-blue-700 hover:bg-yellow-300 transition-colors duration-300">Show
+                More</a>
         </div>
     </section>
+
+    <script>
+        // Sample JSON data
+        const courseData = [
+            { "name": "Computer Science", "duration": "4 Years", "fee": "$10,000", "details": "#" },
+            { "name": "Business Management", "duration": "3 Years", "fee": "$8,000", "details": "#" },
+            { "name": "Mechanical Engineering", "duration": "4 Years", "fee": "$9,000", "details": "#" },
+            { "name": "Electrical Engineering", "duration": "4 Years", "fee": "$9,500", "details": "#" },
+            { "name": "Civil Engineering", "duration": "4 Years", "fee": "$9,000", "details": "#" }
+        ];
+
+        const tableBody = document.getElementById('course-table-body');
+        const searchInput = document.getElementById('search');
+
+        // Function to render table rows
+        function renderTable(data) {
+            tableBody.innerHTML = '';
+            data.forEach(course => {
+                const row = document.createElement('tr');
+                row.className = "hover:bg-yellow-100 transition-colors duration-300";
+                row.innerHTML = `
+                    <td class="py-3 px-6 text-black font-semibold">${course.name}</td>
+                    <td class="py-3 px-6 text-blue-700">${course.duration}</td>
+                    <td class="py-3 px-6 text-blue-700">${course.fee}</td>
+                    <td class="py-3 px-6"><a href="${course.details}" class="text-yellow-400 underline hover:text-yellow-300">View</a></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Search functionality
+        searchInput.addEventListener('input', (e) => {
+            const searchText = e.target.value.toLowerCase();
+            const filteredData = courseData.filter(course =>
+                course.name.toLowerCase().includes(searchText)
+            );
+            renderTable(filteredData);
+        });
+
+        // Initial render
+        renderTable(courseData);
+    </script>
+
+
 
     <!-- Events Section -->
     <section id="events" class="w-11/12 mx-auto py-12">
@@ -267,6 +330,14 @@
         });
     </script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
 
 
 </body>

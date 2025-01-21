@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animated-gradient {
+            background: linear-gradient(270deg, #1E40AF, #000000a1, #4F46E5);
+            background-size: 600% 600%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+    </style>
+</head>
+
+<body class=" ">
+    <nav class="w-full     text-white py-4 px-6 shadow-lg shadow-black gradientAnimation animated-gradient">
+        <div class="flex justify-between items-center max-w-screen-xl mx-auto">
+            <a href="index.html" class="flex items-center text-2xl font-bold">
+                <img src="Logo/logo.png" width="80px" alt="CT GROUP LOGO" class="mr-2">
+            </a>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <svg width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+            </div>
+            <ul id="menu" class="hidden md:flex space-x-6">
+                <li><a href="#achievements" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-trophy mr-2"></i>Achievements</a></li>
+                <li><a href="#testimonials" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-comment-alt mr-2"></i>Testimonials</a></li>
+                <li><a href="courses.html" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-book mr-2"></i>Courses</a></li>
+                <li><a href="#placement" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Placement</a></li>
+                <li><a href="gallery.html" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Gallery</a></li>
+            </ul>
+        </div>
+
+        <!-- Dropdown menu for mobile -->
+        <div id="dropdown-menu" class="hidden   text-white w-3/4 mt-4 rounded-lg shadow-lg right-6">
+            <ul class="flex flex-col space-y-4 p-6   to-slate-300  ">
+                <li><a href="#achievements" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-trophy mr-2"></i>Achievements</a></li>
+                <li><a href="#testimonials" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-comment-alt mr-2"></i>Testimonials</a></li>
+                <li><a href="courses.html" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-book mr-2"></i>Courses</a></li>
+                <li><a href="#placement" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Placement</a></li>
+                <li><a href="gallery.html" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Gallery</a></li>
+
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="max-w-6xl mx-auto px-4 py-10">
+        <h1 class="text-3xl font-bold text-center mb-6 text-yellow-400">Gallery</h1>
+        <div class="mb-6">
+            <input type="text" id="search-bar" placeholder="Search..."
+                class="w-full p-3 rounded-lg border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700">
+        </div>
+        <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+
+    <script>
+        // JSON data for the gallery
+        const galleryData = [
+            { image: "/Images/Gallery/IMG_9413.jpg", title: "Sunset Bliss", description: "A breathtaking sunset view.", date: "2023-01-15" },
+            { image: "/Images/Gallery/IMG_9414.jpg", title: "Mountain Majesty", description: "Snowy peaks reaching the sky.", date: "2023-02-10" },
+            { image: "/Images/Gallery/IMG_9415.jpg", title: "Forest Retreat", description: "Lush green forest paths.", date: "2023-03-05" },
+            { image: "/Images/Gallery/IMG_9416.jpg", title: "Ocean Serenity", description: "Calm and peaceful ocean waves.", date: "2023-04-20" },
+            { image: "/Images/Gallery/IMG_9417.jpg", title: "City Lights", description: "Night cityscape with sparkling lights.", date: "2023-05-15" },
+            { image: "/Images/Gallery/IMG_9418.jpg", title: "Desert Dreams", description: "Golden sand dunes under the sun.", date: "2023-06-25" }
+        ];
+
+        const container = document.getElementById('gallery-container');
+        const searchBar = document.getElementById('search-bar');
+
+        // Function to render gallery cards
+        function renderGallery(data) {
+            container.innerHTML = ''; // Clear current cards
+
+            data.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = "bg-white shadow-lg rounded-lg overflow-hidden transform scale-0 hover:scale-105 transition-transform duration-300 cursor-pointer border-2 border-blue-700";
+                card.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-700">${item.title}</h3>
+                        <p class="text-gray-600 mb-4 ">${item.description}</p>
+                        <p class="text-sm text-yellow-400">${item.date}</p>
+                    </div>
+                `;
+
+                // Add click effect to cards
+                card.addEventListener('click', () => {
+                    gsap.to(card, { scale: 1.2, duration: 0.5, ease: "power3.out", yoyo: true, repeat: 1 });
+                });
+
+                container.appendChild(card);
+                gsap.to(card, { scale: 1, duration: 0.5, delay: index * 0.2 });
+            });
+        }
+
+        // Initial render
+        renderGallery(galleryData);
+
+        // Search functionality
+        searchBar.addEventListener('input', (e) => {
+            const searchValue = e.target.value.toLowerCase();
+            const filteredData = galleryData.filter(item =>
+                item.title.toLowerCase().includes(searchValue) ||
+                item.description.toLowerCase().includes(searchValue)
+            );
+            renderGallery(filteredData);
+        });
+    </script>
+</body>
+
+</html>
