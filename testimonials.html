@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Testimonials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animated-gradient {
+            background: linear-gradient(270deg, #1E40AF, #000000a1, #4F46E5);
+            background-size: 600% 600%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        /* Card Hover Effect */
+        .hover-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <nav class="w-full     text-white py-4 px-6 shadow-lg shadow-black gradientAnimation animated-gradient">
+        <div class="flex justify-between items-center max-w-screen-xl mx-auto">
+            <a href="index.html" class="flex items-center text-2xl font-bold">
+                <img src="Logo/logo.png" width="80px" alt="CT GROUP LOGO" class="mr-2">
+            </a>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <svg width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+            </div>
+            <ul id="menu" class="hidden md:flex space-x-6">
+                <li><a href="courses.html" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-trophy mr-2"></i>Courses</a></li>
+                <li><a href="testimonials.html" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-comment-alt mr-2"></i>Testimonials</a></li>
+                <li><a href="gallery.html" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-book mr-2"></i>Gallery</a></li>
+                <li><a href="infra.html" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Infrastructure</a></li>
+                <li><a href="about.html" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>About</a></li>
+                <li><a href="about.html" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Contact Us</a></li>
+
+            </ul>
+        </div>
+
+        <!-- Dropdown menu for mobile -->
+        <div id="dropdown-menu" class="hidden   text-white w-3/4 mt-4 rounded-lg shadow-lg right-6">
+            <ul class="flex flex-col space-y-4 p-6   to-slate-300  ">
+                <li><a href="courses.html" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-trophy mr-2"></i>Courses</a></li>
+                <li><a href="testimonials.html" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-comment-alt mr-2"></i>Testimonials</a></li>
+                <li><a href="gallery.html" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-book mr-2"></i>Gallery</a></li>
+                <li><a href="infra.html" class="hover:text-yellow-300 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Infrastructure</a></li>
+                <li><a href="about.html" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>About</a></li>
+                <li><a href="about.html" class="hover:text-blue-500 flex items-center"><i
+                            class="fas fa-briefcase mr-2"></i>Contact Us</a></li>
+
+
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+    <section class="py-16 px-4 lg:px-20 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">Student Testimonials</h2>
+            <!-- Cards Container -->
+            <div id="testimonial-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <script>
+        // Example Testimonial Data (Could be fetched from an API or database)
+        const testimonials = [
+            {
+                photo: "Images/Testimonials/1.jpeg",
+                name: "Aarav Sharma",
+                course: "MBA Student",
+                content: "My experience at the college has been life-changing. The professors are incredible and supportive!"
+            },
+            {
+                photo: "Images/Testimonials/1.jpeg",
+                name: "Vihaan Patel",
+                course: "Engineering Graduate",
+                content: "I gained practical skills and made lifelong friends. This college has prepared me for a great career."
+            },
+            {
+                photo: "Images/Testimonials/1.jpeg",
+                name: "Ananya Singh",
+                course: "Literature Graduate",
+                content: "The environment here fosters creativity and learning. I couldn’t have asked for a better experience!"
+            },
+            {
+                photo: "Images/Testimonials/1.jpeg",
+                name: "Aarav Sharma",
+                course: "MBA Student",
+                content: "My experience at the college has been life-changing. The professors are incredible and supportive!"
+            },
+            {
+                photo: "Images/Testimonials/1.jpeg",
+                name: "Vihaan Patel",
+                course: "Engineering Graduate",
+                content: "I gained practical skills and made lifelong friends. This college has prepared me for a great career."
+            },
+            {
+                photo: "Images/Testimonials/1.jpeg",
+                name: "Ananya Singh",
+                course: "Literature Graduate",
+                content: "The environment here fosters creativity and learning. I couldn’t have asked for a better experience!"
+            },
+            {
+                photo: "Images/Testimonials/1.jpeg",
+                name: "Aarav Sharma",
+                course: "MBA Student",
+                content: "My experience at the college has been life-changing. The professors are incredible and supportive!"
+            },
+            {
+                photo: "Images/Testimonials/1.jpeg",
+                name: "Vihaan Patel",
+                course: "Engineering Graduate",
+                content: "I gained practical skills and made lifelong friends. This college has prepared me for a great career."
+            },
+            {
+                photo: "Images/Testimonials/1.jpeg",
+                name: "Ananya Singh",
+                course: "Literature Graduate",
+                content: "The environment here fosters creativity and learning. I couldn’t have asked for a better experience!"
+            },
+            {
+                photo: "Images/Testimonials/1.jpeg",
+                name: "Aarav Sharma",
+                course: "MBA Student",
+                content: "My experience at the college has been life-changing. The professors are incredible and supportive!"
+            },
+            {
+                photo: "Images/Testimonials/1.jpeg",
+                name: "Vihaan Patel",
+                course: "Engineering Graduate",
+                content: "I gained practical skills and made lifelong friends. This college has prepared me for a great career."
+            },
+            {
+                photo: "Images/Testimonials/1.jpeg",
+                name: "Ananya Singh",
+                course: "Literature Graduate",
+                content: "The environment here fosters creativity and learning. I couldn’t have asked for a better experience!"
+            }
+        ];
+
+        // DOM Element for the Testimonials Grid
+        const gridContainer = document.getElementById("testimonial-grid");
+
+        // Dynamically Populate Testimonial Cards
+        testimonials.forEach((testimonial) => {
+            const card = document.createElement("div");
+            card.className = "bg-white rounded-lg shadow-lg p-6 hover-card fade-in";
+
+            card.innerHTML = `
+        <div class="flex items-center mb-4">
+          <img src="${testimonial.photo}" alt="${testimonial.name}" class="w-16 h-16 rounded-full shadow">
+          <div class="ml-4">
+            <h3 class="text-lg font-bold text-gray-800">${testimonial.name}</h3>
+            <p class="text-sm text-gray-500">${testimonial.course}</p>
+          </div>
+        </div>
+        <blockquote class="text-gray-600 text-base">
+          "${testimonial.content}"
+        </blockquote>
+      `;
+
+            // Append card to the grid container
+            gridContainer.appendChild(card);
+        });
+    </script>
+</body>
+
+</html>

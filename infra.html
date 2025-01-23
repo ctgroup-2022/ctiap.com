@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Infrastructure Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animated-gradient {
+            background: linear-gradient(270deg, #1E40AF, #000000a1, #4F46E5);
+            background-size: 600% 600%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+   <!-- Navbar -->
+
+   <nav class="w-full     text-white py-4 px-6 shadow-lg shadow-black gradientAnimation animated-gradient">
+    <div class="flex justify-between items-center max-w-screen-xl mx-auto">
+        <a href="index.html" class="flex items-center text-2xl font-bold">
+            <img src="Logo/logo.png" width="80px" alt="CT GROUP LOGO" class="mr-2">
+        </a>
+        <div class="md:hidden">
+            <button id="menu-btn" class="text-white focus:outline-none">
+                <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                <svg width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                    <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                    <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+        </div>
+        <ul id="menu" class="hidden md:flex space-x-6">
+            <li><a href="courses.html" class="hover:text-yellow-300 flex items-center"><i
+                        class="fas fa-trophy mr-2"></i>Courses</a></li>
+            <li><a href="testimonials.html" class="hover:text-yellow-300 flex items-center"><i
+                        class="fas fa-comment-alt mr-2"></i>Testimonials</a></li>
+            <li><a href="gallery.html" class="hover:text-yellow-300 flex items-center"><i
+                        class="fas fa-book mr-2"></i>Gallery</a></li>
+            <li><a href="infra.html" class="hover:text-yellow-300 flex items-center"><i
+                        class="fas fa-briefcase mr-2"></i>Infrastructure</a></li>
+            <li><a href="about.html" class="hover:text-blue-500 flex items-center"><i
+                        class="fas fa-briefcase mr-2"></i>About</a></li>
+            <li><a href="about.html" class="hover:text-blue-500 flex items-center"><i
+                        class="fas fa-briefcase mr-2"></i>Contact Us</a></li>
+
+        </ul>
+    </div>
+
+    <!-- Dropdown menu for mobile -->
+    <div id="dropdown-menu" class="hidden   text-white w-3/4 mt-4 rounded-lg shadow-lg right-6">
+        <ul class="flex flex-col space-y-4 p-6   to-slate-300  ">
+            <li><a href="courses.html" class="hover:text-yellow-300 flex items-center"><i
+                        class="fas fa-trophy mr-2"></i>Courses</a></li>
+            <li><a href="testimonials.html" class="hover:text-yellow-300 flex items-center"><i
+                        class="fas fa-comment-alt mr-2"></i>Testimonials</a></li>
+            <li><a href="gallery.html" class="hover:text-yellow-300 flex items-center"><i
+                        class="fas fa-book mr-2"></i>Gallery</a></li>
+            <li><a href="infra.html" class="hover:text-yellow-300 flex items-center"><i
+                        class="fas fa-briefcase mr-2"></i>Infrastructure</a></li>
+            <li><a href="about.html" class="hover:text-blue-500 flex items-center"><i
+                        class="fas fa-briefcase mr-2"></i>About</a></li>
+            <li><a href="about.html" class="hover:text-blue-500 flex items-center"><i
+                        class="fas fa-briefcase mr-2"></i>Contact Us</a></li>
+
+
+
+        </ul>
+    </div>
+</nav>
+
+<!-- Top bar with buttons -->
+<div class="w-full bg-gray-100 py-2 px-6 shadow-md">
+    <div class="grid grid-cols-3 gap-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
+        <button onclick="showContent('section1')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">
+            Design Studio
+        </button>
+        <button onclick="showContent('section2')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">
+            Model Making Lab
+        </button>
+        <button onclick="showContent('section3')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">
+            Computer Lab
+        </button>
+        <button onclick="showContent('section4')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">
+            Material Library
+        </button>
+        <button onclick="showContent('section5')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">
+            Lecture Hall
+        </button>
+        <button onclick="showContent('section6')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">
+            Exhibition Hall
+        </button>
+        <button onclick="showContent('section7')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">
+            Workshop
+        </button>
+    </div>
+</div>
+
+
+
+
+    <div class="p-6">
+        <!-- Content -->
+        <div id="sections-container"></div>
+    </div>
+
+    <script>
+        const sectionsData = [
+            {
+                title: "Design Studio",
+                cards: [
+                    { title: "Infra 1", description: "Description 1", img: "Images/Infrastructure/Infra1.jpg" },
+                    { title: "Infra 2", description: "Description 2", img: "Images/Infrastructure/Infra1.jpg" }
+                ]
+            },
+            {
+                title: "Section 2",
+                cards: [
+                    { title: "Infra 3", description: "Description 3", img: "https://via.placeholder.com/150" },
+                    { title: "Infra 4", description: "Description 4", img: "https://via.placeholder.com/150" }
+                ]
+            },
+            {
+                title: "Section 3",
+                cards: [
+                    { title: "Infra 5", description: "Description 5", img: "https://via.placeholder.com/150" },
+                    { title: "Infra 6", description: "Description 6", img: "https://via.placeholder.com/150" }
+                ]
+            },
+            {
+                title: "Section 4",
+                cards: [
+                    { title: "Infra 7", description: "Description 7", img: "https://via.placeholder.com/150" }
+                ]
+            },
+            {
+                title: "Section 5",
+                cards: [
+                    { title: "Infra 8", description: "Description 8", img: "https://via.placeholder.com/150" }
+                ]
+            },
+            {
+                title: "Section 6",
+                cards: [
+                    { title: "Infra 9", description: "Description 9", img: "https://via.placeholder.com/150" }
+                ]
+            },
+            {
+                title: "Section 7",
+                cards: [
+                    { title: "Infra 10", description: "Description 10", img: "https://via.placeholder.com/150" }
+                ]
+            }
+        ];
+
+        const renderSections = () => {
+            const container = document.getElementById("sections-container");
+            sectionsData.forEach((section, index) => {
+                const sectionDiv = document.createElement("div");
+                sectionDiv.id = `section${index + 1}`;
+                sectionDiv.classList.add("content-section", "mb-8");
+
+                const title = document.createElement("h1");
+                title.textContent = section.title;
+                title.classList.add("text-2xl", "font-bold", "mb-4");
+                sectionDiv.appendChild(title);
+
+                const cardsContainer = document.createElement("div");
+                cardsContainer.classList.add("grid", "grid-cols-1", "sm:grid-cols-2", "lg:grid-cols-3", "gap-4");
+
+                section.cards.forEach(card => {
+                    const cardDiv = document.createElement("div");
+                    cardDiv.classList.add("bg-white", "shadow-md", "rounded-lg", "p-4", "hover:shadow-lg", "transition");
+
+                    const img = document.createElement("img");
+                    img.src = card.img;
+                    img.alt = card.title;
+                    img.classList.add("w-full", "h-64", "object-cover", "rounded-t-md","shadow-md");
+                    cardDiv.appendChild(img);
+
+                    const cardTitle = document.createElement("h2");
+                    cardTitle.textContent = card.title;
+                    cardTitle.classList.add("text-lg", "font-semibold", "mt-2");
+                    cardDiv.appendChild(cardTitle);
+
+                    const cardDesc = document.createElement("p");
+                    cardDesc.textContent = card.description;
+                    cardDesc.classList.add("text-sm", "text-gray-600");
+                    cardDiv.appendChild(cardDesc);
+
+                    cardsContainer.appendChild(cardDiv);
+                });
+
+                sectionDiv.appendChild(cardsContainer);
+                container.appendChild(sectionDiv);
+            });
+        };
+
+        const showContent = (sectionId) => {
+            document.querySelectorAll(".content-section").forEach(section => {
+                section.classList.remove("active");
+            });
+
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add("active");
+                targetSection.scrollIntoView({ behavior: "smooth" });
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderSections();
+            showContent("section1"); // Show the first section by default
+        });
+    </script>
+</body>
+
+</html>
