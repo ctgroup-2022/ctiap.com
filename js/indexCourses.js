@@ -37,3 +37,6 @@ searchInput.addEventListener('input', (e) => {
 
 // Initial render
 renderTable(courseData);
+
+
+

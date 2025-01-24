@@ -39,3 +39,7 @@ setInterval(() => {
     currentIndex = (currentIndex + 3) % achievements.length;
     renderAchievements(currentIndex);
 }, 2000);
+
+
+
+

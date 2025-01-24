@@ -46,6 +46,9 @@ const sectionsData = [
     }
 ];
 
+/**
+ * Renders the sections and their respective cards on the page.
+ */
 const renderSections = () => {
     const container = document.getElementById("sections-container");
     sectionsData.forEach((section, index) => {
@@ -68,7 +71,7 @@ const renderSections = () => {
             const img = document.createElement("img");
             img.src = card.img;
             img.alt = card.title;
-            img.classList.add("w-full", "h-64", "object-cover", "rounded-t-md","shadow-md");
+            img.classList.add("w-full", "h-64", "object-cover", "rounded-t-md", "shadow-md");
             cardDiv.appendChild(img);
 
             const cardTitle = document.createElement("h2");
@@ -89,6 +92,10 @@ const renderSections = () => {
     });
 };
 
+/**
+ * Shows the content of the specified section and scrolls it into view.
+ * @param {string} sectionId - The ID of the section to show.
+ */
 const showContent = (sectionId) => {
     document.querySelectorAll(".content-section").forEach(section => {
         section.classList.remove("active");
